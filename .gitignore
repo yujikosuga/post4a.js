@@ -1,0 +1,17 @@
+doc/
+target
+bin/
+*.class
+*~
+*.cache
+*.diff
+*.log
+*.pid
+.DS_Store
+.classpath
+.cvsignore
+.checkstyle
+*.patch
+.project
+.settings
+Thumbs.db
