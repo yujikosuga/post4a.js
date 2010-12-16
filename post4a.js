@@ -1,5 +1,5 @@
 // post4a.js - POST for Anchor
-// JavaScript for sending a POST HTTP request with an HTML anchor tag
+// JavaScript for sending a POST request with an HTML anchor tag
 //
 // (c) Yuji Kosuga 2010 http://blog.yujikosuga.com
 // post4a.js is freely distributable under the MIT license 
