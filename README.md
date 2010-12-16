@@ -1,7 +1,21 @@
 post4a.js 
 =========
 
-JavaScript for sending a POST HTTP request with an HTML anchor tag  
+JavaScript for sending a POST request with an HTML anchor tag.  
+
+Summary
+-------
+
+post4a.js is a JavaScript library that would help to prevent websites from exposing a user's identity embedded in `Referer` to other sites, by avoiding selected query-strings from being used for the page URL. 
+
+The regular HTML anchor tags (`<A>`) let browsers issue GET requests when the user clicks on the anchors, so that the browser can simply, directly open the requested page with the URL specified in the anchor's `href` attribute. 
+When the browsers send the HTTP request, they by default automatically attach the `Referer` value to the request for the purpose of letting the destination website know about the page from which the browser is arriving. 
+If the URL contains user's sensitive information, the destination website can extract them from the URL.
+
+Since POST requests embed query-strings into the request body instead of the URL, they are safer than GET requests in terms of `Referer` information theft, because the request body is not automatically embedded to other requests.
+However, the browsers only send GET requests for anchor tags, currently.
+post4a.js provides a simple solution currently available on the today's browsers.
+It automatically converts the specified anchor tags into form tags to send POST requests with some pieces of parameters you want to hide from `Referer`.
 
 Author
 ------
@@ -38,9 +52,9 @@ How to Use
 Try this Sample
 ----
 Please copy and paste the following anchor tag for checking to see HTTP parameters your browser sends. 
-This anchor sends a POST message equivalent to `sessionid=43ec7d99d05064.98961542&lang=en`.
+This anchor sends a POST message equivalent to `userid=43ec7d99d05064.98961542&lang=en`.
 
     <a href="http://www.yujikosuga.com/httpParams.php" 
-       class="post4a" data-postdata='{"sessionid":"43ec7d99d05064.98961542", "lang":"en"}'>
+       class="post4a" data-postdata='{"userid":"43ec7d99d05064.98961542", "lang":"en"}'>
        HTTP Environment Checker
     </a>
