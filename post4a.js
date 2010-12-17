@@ -20,21 +20,20 @@ var post4a = {
     // Add a post4a 'onclick' event listener to each anchor that has 'post4a'
     // class.
     attach : function() {
-	var elems = getPost4aClassElement();
-	for ( var i in elems)
-	    post4a.addEvent(elems[i], 'click', post4a.submit);
+	var post4aElems = _getElementsByClassName(post4a.CLASSNAME);
+	for ( var i = 0; i < post4aElems.length; i++)
+	    post4a.addEvent(post4aElems[i], 'click', post4a.submit);
 
-	// Returns an array of anchor tags containing the 'post4a' class.
-	function getPost4aClassElement() {
+	function _getElementsByClassName(classname) {
 	    var elems = new Array();
 	    if (document.getElementsByClassName) // For W3C DOM
-		elems = document.getElementsByClassName(post4a.CLASSNAME);
+		elems = document.getElementsByClassName(classname);
 	    else { // For IE
-		var aNodes = document.getElementsByTagName("a");
-		for ( var i = 0; i < aNodes.length; i++) {
-		    var a = aNodes[i];
-		    if (a.className == post4a.CLASSNAME)
-			elems.push(a);
+		var nodes = document.all;
+		for ( var i = 0; i < nodes.length; i++) {
+		    var node = nodes[i];
+		    if (node.className == classname)
+			elems.push(node);
 		}
 	    }
 	    return elems;
