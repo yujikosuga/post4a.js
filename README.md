@@ -49,12 +49,8 @@ How to Use
 
 **Declare POST data**: Create a `data-postdata` attribute to the anchor tag and add the data to be POSTed in [JSON](http://www.json.org/) format into the `data-postdata` value.
 
-Try this Sample
+Demo
 ----
-Please copy and paste the following anchor tag for checking to see HTTP parameters your browser sends. 
-This anchor sends a POST message equivalent to `userid=43ec7d99d05064.98961542&lang=en`.
 
-    <a href="http://www.yujikosuga.com/httpParams.php" 
-       class="post4a" data-postdata='{"userid":"43ec7d99d05064.98961542", "lang":"en"}'>
-       HTTP Environment Checker
-    </a>
+post4a.js demonstration page is [here](http://www.yujikosuga.com/post4a/).
+
